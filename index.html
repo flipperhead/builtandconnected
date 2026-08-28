@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Built &amp; Connected — Home Technology and Custom Carpentry | Estes Park, CO</title>
+<meta name="description" content="Home technology and custom carpentry serving the Estes Park Valley and surrounding communities. Technology checkups, network and Wi-Fi setup, backups, account protection, and fine carpentry. Call (970) 480-8121.">
+
+<meta property="og:title" content="Built &amp; Connected — Home Technology and Custom Carpentry">
+<meta property="og:description" content="Home technology and custom carpentry in Estes Park, Colorado. Call (970) 480-8121.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://builtandconnected.com/">
+<meta name="theme-color" content="#2C2620">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=Public+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════════════════════
+   HERO IMAGE — swap in your Midjourney art later.
+   1. Put the file next to this one and name it  hero.jpg
+   2. Delete the two slashes at the start of the line below.
+   The circuit-trace artwork stays underneath as a backdrop.
+   ══════════════════════════════════════════════════════════════ */
+:root {
+  /* --hero-image: url('hero.jpg'); */
+
+  --bark:        #2C2620;   /* brand background, weathered grey-brown */
+  --bark-deep:   #211C17;   /* deeper panel */
+  --bark-line:   #3D352C;   /* hairline rules */
+  --blue:        #2E7DF0;   /* Vivid Blue — adjust to your exact Canva hex */
+  --blue-soft:   #7FB1F7;
+  --brass:       #C49A63;   /* carpentry accent, warm tone */
+  --paper:       #EFE9E1;   /* primary text */
+  --paper-dim:   #A3968A;   /* secondary text */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bark);
+  color: var(--paper);
+  font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--blue-soft);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ───────────────  Masthead  ─────────────── */
+
+.masthead {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+}
+
+.masthead-mark {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 0.8125rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+.masthead-tel {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  color: var(--paper-dim);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.masthead-tel:hover { color: var(--blue-soft); }
+
+/* ───────────────  Hero  ─────────────── */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 5.5rem;
+  border-bottom: 1px solid var(--bark-line);
+}
+
+.hero-art,
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-art svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-photo {
+  background-image: var(--hero-image, none);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.28;
+  mix-blend-mode: luminosity;
+}
+
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(70% 90% at 22% 45%, rgba(44,38,32,0.94) 0%, rgba(44,38,32,0.62) 45%, rgba(44,38,32,0.15) 100%);
+}
+
+.hero-body {
+  position: relative;
+  z-index: 2;
+  padding-top: 6rem;
+  max-width: 40rem;
+}
+
+.eyebrow {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--paper-dim);
+  margin: 0 0 1.75rem;
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 2.25rem;
+  height: 1px;
+  background: var(--blue);
+  vertical-align: middle;
+  margin-right: 0.9rem;
+}
+
+h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.75rem, 8.5vw, 5.25rem);
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+}
+
+h1 .amp {
+  color: var(--blue);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.deck {
+  font-size: clamp(1.125rem, 2.6vw, 1.4375rem);
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--paper);
+  margin: 0 0 0.75rem;
+  max-width: 30rem;
+}
+
+.place {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--paper-dim);
+  margin: 0 0 2.75rem;
+}
+
+/* ───────────────  Contact buttons  ─────────────── */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 2px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-call {
+  background: var(--blue);
+  color: #fff;
+  border: 1px solid var(--blue);
+}
+
+.btn-call:hover { background: #1C6AD8; border-color: #1C6AD8; }
+
+.btn-mail {
+  background: transparent;
+  color: var(--paper);
+  border: 1px solid var(--bark-line);
+}
+
+.btn-mail:hover { border-color: var(--paper-dim); }
+
+.btn svg { width: 1rem; height: 1rem; flex: none; }
+
+/* ───────────────  Note on the build  ─────────────── */
+
+.note {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid var(--bark-line);
+}
+
+.note-inner {
+  max-width: 44rem;
+  border-left: 2px solid var(--brass);
+  padding-left: 1.75rem;
+}
+
+.note p {
+  margin: 0 0 1.1rem;
+  font-size: 1.0625rem;
+  color: var(--paper-dim);
+}
+
+.note p:last-child { margin-bottom: 0; }
+
+.note strong {
+  color: var(--paper);
+  font-weight: 500;
+}
+
+/* ───────────────  The two trades  ─────────────── */
+
+.trades {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--bark-line);
+}
+
+.trade {
+  padding: 4rem 3rem 4.5rem 0;
+}
+
+.trade + .trade {
+  padding-left: 3rem;
+  padding-right: 0;
+  border-left: 1px solid var(--bark-line);
+}
+
+.trade-tag {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 0.6875rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+}
+
+.trade-tech .trade-tag { color: var(--blue); }
+.trade-wood .trade-tag { color: var(--brass); }
+
+.trade h2 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+}
+
+.trade p {
+  margin: 0 0 1.5rem;
+  color: var(--paper-dim);
+}
+
+.trade ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.trade li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.65rem;
+  font-size: 1rem;
+  color: var(--paper);
+}
+
+.trade li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.trade-tech li::before { background: var(--blue); }
+.trade-wood li::before { background: var(--brass); }
+
+.trade-foot {
+  margin-top: 1.75rem;
+  font-size: 0.9375rem;
+  color: var(--paper-dim);
+  font-style: italic;
+}
+
+/* ───────────────  Footer  ─────────────── */
+
+.foot {
+  padding: 3.5rem 0 4rem;
+}
+
+.foot-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem 4rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.foot-label {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--paper-dim);
+  margin: 0 0 0.65rem;
+}
+
+.foot-line {
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+.foot-line a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--bark-line);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.foot-line a:hover {
+  color: var(--blue-soft);
+  border-color: var(--blue-soft);
+}
+
+.colophon {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--bark-line);
+  font-size: 0.8125rem;
+  color: var(--paper-dim);
+}
+
+.colophon p { margin: 0; }
+
+/* ───────────────  Motion  ─────────────── */
+
+.pulse {
+  stroke-dasharray: 46 1600;
+  animation: travel 9s linear infinite;
+}
+
+.pulse-2 { animation-duration: 11s; animation-delay: -3s; }
+.pulse-3 { animation-duration: 13s; animation-delay: -6s; }
+
+@keyframes travel {
+  from { stroke-dashoffset: 1646; }
+  to   { stroke-dashoffset: 0; }
+}
+
+.lift {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: lift 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.lift-1 { animation-delay: 0.05s; }
+.lift-2 { animation-delay: 0.16s; }
+.lift-3 { animation-delay: 0.27s; }
+.lift-4 { animation-delay: 0.38s; }
+.lift-5 { animation-delay: 0.5s; }
+
+@keyframes lift {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse { animation: none; opacity: 0; }
+  .lift { animation: none; opacity: 1; transform: none; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+/* ───────────────  Small screens  ─────────────── */
+
+@media (max-width: 780px) {
+  .hero-body { padding-top: 3.5rem; }
+  .hero { padding-bottom: 3.5rem; }
+  .hero-veil {
+    background: linear-gradient(180deg, rgba(44,38,32,0.72) 0%, rgba(44,38,32,0.9) 65%, var(--bark) 100%);
+  }
+  .trades { grid-template-columns: 1fr; }
+  .trade { padding: 3rem 0 3.25rem; }
+  .trade + .trade {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--bark-line);
+  }
+  .actions { flex-direction: column; align-items: stretch; }
+  .btn { justify-content: center; }
+  .note { padding: 3.25rem 0; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+
+  <!-- Grain resolving into circuit trace -->
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grainToTrace" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0"    stop-color="#6B5946" stop-opacity="0.30"/>
+          <stop offset="0.40" stop-color="#7E6A52" stop-opacity="0.42"/>
+          <stop offset="0.62" stop-color="#2E7DF0" stop-opacity="0.34"/>
+          <stop offset="1"    stop-color="#2E7DF0" stop-opacity="0.48"/>
+        </linearGradient>
+        <linearGradient id="pulseGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0"   stop-color="#7FB1F7" stop-opacity="0"/>
+          <stop offset="0.5" stop-color="#9BC6FF" stop-opacity="0.95"/>
+          <stop offset="1"   stop-color="#7FB1F7" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <g fill="none" stroke="url(#grainToTrace)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0,64 C200,46 330,84 520,64 L716,64 L716,22 L1118,22"/>
+        <path d="M0,150 C160,128 250,178 404,158 C548,140 636,166 772,152 L992,152 L992,224 L1198,224"/>
+        <path d="M0,262 C182,282 268,234 448,258 C588,278 668,244 810,266 L1052,266 L1052,330 L1262,330"/>
+        <path d="M0,384 C142,360 306,404 468,378 C610,355 712,392 852,372 L1136,372"/>
+        <path d="M0,502 C204,526 306,478 486,502 C628,521 730,486 872,504 L1074,504 L1074,420 L1316,420"/>
+        <path d="M0,626 C162,604 286,648 470,622 C612,602 716,638 900,616 L1172,616 L1172,682 L1372,682"/>
+        <path d="M0,724 C186,742 328,706 512,724 L914,724"/>
+      </g>
+
+      <g fill="none" stroke="url(#pulseGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path class="pulse" d="M0,150 C160,128 250,178 404,158 C548,140 636,166 772,152 L992,152 L992,224 L1198,224"/>
+        <path class="pulse pulse-2" d="M0,502 C204,526 306,478 486,502 C628,521 730,486 872,504 L1074,504 L1074,420 L1316,420"/>
+        <path class="pulse pulse-3" d="M0,262 C182,282 268,234 448,258 C588,278 668,244 810,266 L1052,266 L1052,330 L1262,330"/>
+      </g>
+
+      <g fill="#2E7DF0" fill-opacity="0.55">
+        <circle cx="1118" cy="22"  r="3.5"/>
+        <circle cx="1198" cy="224" r="3.5"/>
+        <circle cx="1262" cy="330" r="3.5"/>
+        <circle cx="1136" cy="372" r="3.5"/>
+        <circle cx="1316" cy="420" r="3.5"/>
+        <circle cx="1372" cy="682" r="3.5"/>
+        <circle cx="914"  cy="724" r="3.5"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-photo" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <div class="masthead">
+      <span class="masthead-mark">Built &amp; Connected, LLC</span>
+      <a class="masthead-tel" href="tel:+19704808121">(970)&nbsp;480-8121</a>
+    </div>
+
+    <div class="hero-body">
+      <p class="eyebrow lift lift-1">Estes Park, Colorado</p>
+
+      <h1 class="lift lift-2">Built<br><span class="amp">&amp;</span> Connected</h1>
+
+      <p class="deck lift lift-3">Keeping your technology working for you, and your home or shop in good repair.</p>
+
+      <p class="place lift lift-4">Serving the Estes Park Valley and surrounding communities</p>
+
+      <div class="actions lift lift-5">
+        <a class="btn btn-call" href="tel:+19704808121">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (970) 480-8121
+        </a>
+        <a class="btn btn-mail" href="mailto:jason@builtandconnected.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          Send an email
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="note">
+    <div class="wrap">
+      <div class="note-inner">
+        <p><strong>The full website is in progress.</strong> I'm building it by hand rather than starting from a template.</p>
+        <p>In the meantime, this page covers the essentials — what I do, and how to reach me. The phone and email are live today.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="trades">
+    <div class="wrap" style="display:contents;">
+      <div class="trade trade-tech">
+        <p class="trade-tag">Technology</p>
+        <h2>Making home and small-business technology work — and keep working</h2>
+        <p>Most technology trouble isn't dramatic. It's a backup nobody ever tested, a router still using its factory password, an email account with no second layer of protection. I find those things and fix them, then explain what I did in plain language.</p>
+        <ul>
+          <li>Technology checkups, with a written report you keep</li>
+          <li>Network and Wi-Fi setup, cleanup, and hardening</li>
+          <li>Backups that get tested, not just switched on</li>
+          <li>Passwords, accounts, and second-factor sign-in</li>
+          <li>Learning to spot scams, phishing, and fake calls</li>
+          <li>New computer setup and moving your files over</li>
+          <li>Vacation rental technology — guest Wi-Fi, locks, thermostats</li>
+        </ul>
+      </div>
+
+      <div class="trade trade-wood">
+        <p class="trade-tag">Carpentry</p>
+        <h2>From framing to finish, decks to doors</h2>
+        <p>I came up in the carpentry trade and the craftsmanship is the part I still enjoy most. Decks, remodels, and repairs are the bulk of it — work that often starts with tearing something out and ends with something that looks like it belongs. Weather up here is hard on outdoor woodwork, and I build with that in mind.</p>
+        <ul>
+          <li>Decks — new builds, rebuilds, railings, and repairs</li>
+          <li>Remodels and renovations, room by room</li>
+          <li>Doors, windows, and framing</li>
+          <li>Trim, molding, and finish carpentry</li>
+          <li>Built-ins, shelving, and storage</li>
+          <li>Rot repair, structural fixes, and weathered rebuilds</li>
+        </ul>
+        <p class="trade-foot">Sized to the job — a single door or a whole floor. If you're not sure whether it's something I do, ask. Photographs of past work are coming to this website soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <p class="foot-label">Call or text</p>
+          <p class="foot-line"><a href="tel:+19704808121">(970) 480-8121</a></p>
+        </div>
+        <div>
+          <p class="foot-label">Email</p>
+          <p class="foot-line"><a href="mailto:jason@builtandconnected.com">jason@builtandconnected.com</a></p>
+        </div>
+        <div>
+          <p class="foot-label">Where I work</p>
+          <p class="foot-line">The Estes Park Valley<br>and surrounding communities</p>
+        </div>
+      </div>
+
+      <div class="colophon">
+        <p>Built &amp; Connected, LLC — Home Technology and Custom Carpentry — Estes Park, Colorado</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
