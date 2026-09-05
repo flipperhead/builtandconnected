@@ -86,14 +86,14 @@ a:focus-visible, button:focus-visible {
 .nav-mark img {
   display: block;
   width: auto;
-  height: 46px;
+  height: 22px;
 }
 
 /* Homepage: the hero carries the wordmark, so the nav doesn't repeat it. */
 .nav-home { justify-content: flex-end; }
 
 @media (max-width: 640px) {
-  .nav-mark img { height: 34px; }
+  .nav-mark img { height: 17px; }
 }
 
 /* ───────────────  Hero wordmark  ─────────────── */
