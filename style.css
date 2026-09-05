@@ -770,3 +770,76 @@ h1 .amp { color: var(--blue); font-weight: 500; font-style: italic; }
 @media (max-width: 640px) {
   .story, .chapter { padding: 3.25rem 0; }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION BACKGROUNDS
+   Photographic textures behind full-width sections.
+
+   The images are darkened multiplicatively rather than covered with
+   a flat overlay. A flat overlay pulls the glowing traces and the
+   dark wood toward the same brown, so the picture goes dim AND flat.
+   Scaling brightness keeps the ratio between them, so the wood drops
+   away while the circuitry stays hot.
+
+   Dials, per section:
+     --tex-bright  lower = darker overall     (0.30 – 0.60)
+     --tex-punch   higher = more glow contrast (1.0 – 1.6)
+     --tex-veil    a light wash for text legibility only (0 – 0.4)
+   ══════════════════════════════════════════════════════════════ */
+
+.tex {
+  position: relative;
+  isolation: isolate;
+  background-color: #191512;
+  --tex-bright: 0.42;
+  --tex-punch: 1.25;
+  --tex-veil: 0.22;
+  --tex-pos: center;
+}
+
+.tex::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: var(--tex-img, none);
+  background-size: cover;
+  background-position: var(--tex-pos);
+  filter: saturate(0.72) brightness(var(--tex-bright)) contrast(var(--tex-punch));
+}
+
+/* Light wash, strongest at the edges, so text stays readable without
+   flattening the middle of the picture. */
+.tex::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(25, 21, 18, calc(var(--tex-veil) + 0.18)) 0%,
+    rgba(25, 21, 18, var(--tex-veil)) 45%,
+    rgba(25, 21, 18, calc(var(--tex-veil) + 0.18)) 100%
+  );
+}
+
+/* Individual assignments */
+.tex-grain  { --tex-img: url('images/tex-grain.jpg');  --tex-bright: 0.40; --tex-punch: 1.20; }
+/* Kept for later use — currently unassigned. Two images is the most
+   this page holds without them crowding each other: the barn panel
+   spans two sections, so every remaining slot is adjacent to it. */
+.tex-planks { --tex-img: url('images/tex-planks.jpg'); --tex-bright: 0.62; --tex-punch: 0.92; --tex-veil: 0.30; }
+/* Barn: spans two sections so the whole building fits. Contained
+   rather than cover, anchored bottom so the roofline stays in frame. */
+.tex-barn   { --tex-img: url('images/tex-barn.jpg');   --tex-bright: 0.52; --tex-punch: 1.35; --tex-veil: 0.16; --tex-pos: center bottom; }
+.tex-boards { --tex-img: url('images/tex-boards.jpg'); --tex-bright: 0.46; --tex-punch: 1.30; }
+
+/* A textured section supplies its own background, so cancel the tint. */
+.chapter-tint.tex, .smallbiz.tex, .checkup.tex { background-color: #191512; }
+
+/* Sections sitting inside a .tex panel stay transparent so the
+   picture runs behind all of them uninterrupted. */
+.tex > .smallbiz,
+.tex > .limits,
+.tex > .chapter { background-color: transparent; }
+.tex > .smallbiz { border-bottom: 1px solid rgba(61, 53, 44, 0.55); }
