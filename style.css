@@ -170,6 +170,73 @@ a:focus-visible, button:focus-visible {
   max-width: 42rem;
 }
 
+/* ───────────────  Hero: barn artwork (experiment)  ───────────────
+   Jason's barn-with-circuitry image, the same one on the back of the
+   business card, behind the homepage hero. It replaces the SVG line
+   art there; remove the .hero-barn class in index.html to go back.
+
+   Desktop: the text sits over the dark sky on the left, so the veil is
+   heavy on the left and nearly clear on the right where the circuitry
+   is brightest. Phones: the barn sits behind the text, so the veil is
+   even, light enough to keep the traces visible.
+   Measured against --paper text: ~8:1 behind the headline on desktop
+   and ~8:1 on phones, at the 99th-percentile brightest pixel. */
+
+.hero-barn {
+  background-color: #191512;
+  min-height: clamp(36rem, 52vw, 50rem);
+}
+
+.hero-barn .hero-art { display: none; }
+
+.hero-barn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('images/tex-barn.jpg') 62% 40% / cover no-repeat;
+  filter: saturate(0.95) brightness(0.85) contrast(1.08);
+}
+
+.hero-barn .hero-veil {
+  background:
+    linear-gradient(180deg, rgba(25,21,18,0.6) 0, rgba(25,21,18,0) 7rem),
+    linear-gradient(90deg,
+      rgba(25,21,18,0.84) 0%,
+      rgba(25,21,18,0.70) 40%,
+      rgba(25,21,18,0.30) 62%,
+      rgba(25,21,18,0.05) 85%);
+}
+
+/* A soft shadow under the light-weight headline, for the few spots
+   where a glowing trace runs right behind a letter. */
+.hero-barn .hero-h1,
+.hero-barn .eyebrow { text-shadow: 0 1px 12px rgba(25,21,18,0.85), 0 0 2px rgba(25,21,18,0.6); }
+
+/* Tablets: the text column takes up more of the width, so the dark
+   side of the veil reaches further across. */
+@media (max-width: 1000px) {
+  .hero-barn .hero-veil {
+    background:
+      linear-gradient(180deg, rgba(25,21,18,0.6) 0, rgba(25,21,18,0) 7rem),
+      linear-gradient(90deg,
+        rgba(25,21,18,0.86) 0%,
+        rgba(25,21,18,0.74) 55%,
+        rgba(25,21,18,0.35) 80%,
+        rgba(25,21,18,0.15) 100%);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-barn { min-height: 0; }
+  .hero-barn::before { background-position: 72% 40%; }
+  .hero-barn .hero-veil {
+    background: linear-gradient(180deg,
+      rgba(25,21,18,0.56) 0%,
+      rgba(25,21,18,0.64) 55%,
+      rgba(25,21,18,0.50) 100%);
+  }
+}
+
 h1 {
   font-family: 'Archivo', sans-serif;
   font-weight: 800;
