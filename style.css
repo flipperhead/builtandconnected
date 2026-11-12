@@ -114,6 +114,15 @@ a:focus-visible, button:focus-visible {
   letter-spacing: 0;
   text-transform: none;
   color: var(--paper);
+  margin: 0 0 1rem;
+  max-width: 34rem;
+}
+
+/* One plain sentence under the homepage headline. */
+.hero-sub {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--paper-dim);
   margin: 0 0 2.5rem;
   max-width: 34rem;
 }
@@ -515,6 +524,24 @@ h1 .amp { color: var(--blue); font-weight: 500; font-style: italic; }
 }
 
 .area p { color: var(--paper-dim); margin: 0 0 1rem; }
+
+/* Short "What I don't offer" list under the service area. */
+.not-offered {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--bark-line);
+  max-width: 40rem;
+}
+
+.not-offered h3 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin: 0 0 0.75rem;
+}
+
+.not-offered ul { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--paper-dim); }
+.not-offered li { margin-bottom: 0.35rem; }
 
 .towns {
   display: flex;
