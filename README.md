@@ -114,6 +114,15 @@ know what I do, whether I can help, and how to reach me.
   - managed service provider → an IT company on a monthly contract
   - network separation → keeping guests off your own network
   - hardening → tightening the settings
+- **Trade terms are not jargon — keep them.** The swaps above are for consumer
+  technology words, where a plain description genuinely reads better. They do
+  not apply to carpentry. Mitered, stock, racked out of square, countersunk,
+  flame spread rating and the like belong on the carpentry page and should not
+  be translated out. Someone hiring a carpenter expects to meet a few words
+  they would have to look up; stripping them makes the page vaguer rather than
+  clearer, and it reads as talking down. "Plain language" here means unadorned,
+  not simplified. (This was settled once and then lost in a rewrite of these
+  rules — if you are tempted to remove it, that is the loop repeating.)
 - **No marketing filler.** No "crafting solutions," no "peace of mind," no
   stacked adjectives.
 

@@ -937,3 +937,107 @@ h1 .amp { color: var(--blue); font-weight: 500; font-style: italic; }
 .tex > .limits,
 .tex > .chapter { background-color: transparent; }
 .tex > .smallbiz { border-bottom: 1px solid rgba(61, 53, 44, 0.55); }
+
+/* ══════════════════════════════════════════════════════════════
+   PROJECT GALLERIES — carpentry page
+
+   The carpentry work is organised by job rather than by category:
+   there is depth within a few projects and no breadth across many,
+   so a by-category grid would advertise the empty categories.
+
+   NOTE: this block once went into a git stash during a branch
+   switch and was never popped. It sat there for three weeks while
+   carpentry.html rendered as unstyled full-width images — the
+   before/after pair alone came to 2,415px tall. If the carpentry
+   page ever looks enormous again, check this block is here, and
+   check `git stash list`.
+   ══════════════════════════════════════════════════════════════ */
+
+.project { padding: 3.5rem 0; }
+.project + .project { border-top: 1px solid var(--bark-line); }
+.project-tint { background: var(--bark-deep); }
+
+.project-head { margin-bottom: 1.25rem; }
+
+.project-head h2 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.project-intro { margin: 0 0 1.75rem; }
+.shots + .project-intro,
+.ba + .project-intro { margin-top: 2rem; }
+
+/* Photo grids. auto-fit keeps one column on a phone without a
+   media query; 260px is about where a deck photo stops reading. */
+.shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+/* Before/after is a fixed pair so the two never separate onto
+   different rows, and it is capped well short of the text column
+   so both halves sit in one view without scrolling. Comparing
+   them is the whole point; a pair you have to scroll between
+   isn't a comparison. */
+.ba {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 920px;
+  margin: 0 0 1.75rem;
+}
+@media (max-width: 560px) { .ba { grid-template-columns: 1fr; } }
+
+.shot { margin: 0; }
+
+.shot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #1D1915;
+  border: 1px solid var(--bark-line);
+  border-radius: 3px;
+}
+
+/* The pair runs wider and shorter than the gallery tiles, which
+   keeps the two frames level and the block compact. */
+.ba .shot img { aspect-ratio: 3 / 2; }
+
+/* Portrait photos keep their shape rather than being cropped
+   square — the tree deck and the stair only work upright. */
+.shot-tall img { aspect-ratio: 3 / 4; }
+
+.shot figcaption {
+  margin-top: 0.6rem;
+  color: var(--paper-dim);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+/* Before / After label. Brass rather than blue: on this page the
+   blue belongs to the technology side and reads as a link. */
+.ba-tag {
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+/* One tall photo beside its own text. */
+.feature {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.7fr) 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+@media (max-width: 760px) { .feature { grid-template-columns: 1fr; gap: 1.75rem; } }
