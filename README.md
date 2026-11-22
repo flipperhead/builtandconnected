@@ -206,6 +206,11 @@ know what I do, whether I can help, and how to reach me.
 
 - [ ] Carpentry page and photo gallery
 - [ ] Compress images — phone photos run 3–8 MB; web wants 150–400 KB
+  - [ ] The homepage carpentry card still loads `standerferdeck.jpg`
+        (4.7 MB, 4000 px wide). Compress it, or swap in one of the
+        web-sized deck photos.
+- [ ] `images/jason-truss.jpg` (3.6 MB) is in the repo but nothing uses it.
+      Either put it on a page (compressed first) or remove it.
 - [ ] Technology photo for the third homepage card
 - [ ] Real testimonials — the placeholder section should be deleted until
       there are at least two. A technology one is worth more than a
