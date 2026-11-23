@@ -204,15 +204,48 @@ know what I do, whether I can help, and how to reach me.
 
 ## Still to do
 
-- [ ] Carpentry page and photo gallery
-- [ ] Compress images — phone photos run 3–8 MB; web wants 150–400 KB
-- [ ] Technology photo for the third homepage card
-- [ ] Real testimonials — the placeholder section should be deleted until
-      there are at least two. A technology one is worth more than a
-      carpentry one.
-- [ ] Deploy the full site over the holding page
-- [ ] Git-triggered Cloudflare deploys
-- [ ] Security+ badge on the About page — pull the official badge from
-      CompTIA/Credly rather than a logo found online
+This covers the website only. Business items — insurance, the client
+agreement, subscriptions — live in Jason's task list, not here.
+
+### Blocks deploy
+
+- [ ] Remove the testimonial placeholder section from `index.html`. It
+      currently ships as visible bracket text reading "[Testimonial — the
+      good ones name the specific problem that got solved…]". Put it back
+      when there are at least two real ones; a technology testimonial is
+      worth more than a carpentry one now that the carpentry work has
+      photographs doing that job.
+
+### Images
+
+- [ ] Compress `images/standerferdeck.jpg` (4.7 MB), or re-point
+      `--photo-deck` in `style.css` at an already-optimised deck photo.
+      It is the homepage carpentry card and the largest file on the site.
+- [ ] Delete or use `images/jason-truss.jpg` (3.6 MB, referenced by
+      nothing).
+- [ ] Technology photo for the third homepage card.
+- [ ] Interior finish carpentry photos. The carpentry page currently shows
+      two from 2007–2010 under an "earlier work" attribution and nothing
+      recent.
+- [ ] A before/after pair for repair work. None exists, and the rental
+      owners page promises rot repair with no evidence behind it.
+- [ ] Reshoot the bunk room with the beds made, if the house is reachable.
+- [ ] Security+ badge for the About page — the official badge from
+      CompTIA/Credly, not a logo found online.
+
+### Copy decisions open
+
+- [ ] Whether "I do both. That's the entire pitch." goes back on
+      `rental-owners.html`. Cut as marketing self-reference; it was also
+      the bluntest line on the page.
+- [ ] Whether the barn hero on `index.html` stays. Still marked
+      "experiment" in `style.css`.
+- [ ] The scam-spotting session needs a price and a defined shape. It is
+      the only service on the site with neither.
 - [ ] AI-scam content folded into the phishing session (voice cloning,
-      convincing phishing text)
+      convincing phishing text).
+
+### Deployment
+
+- [ ] Deploy the full site over the holding page.
+- [ ] Git-triggered Cloudflare deploys, to replace manual drag-and-drop.

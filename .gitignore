@@ -1,0 +1,11 @@
+# Dev tooling only. The site itself has no dependencies and no build step —
+# playwright is here solely for tools/check-pages.js.
+node_modules/
+
+# OS cruft
+Thumbs.db
+.DS_Store
+
+# Scratch drafts — keep working notes out of the repo
+*-draft.md
+*-draft-*.md
